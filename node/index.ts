@@ -5,7 +5,6 @@ import { Clients } from './clients'
 import { provideSuppliersUsingMiniCart } from './API/suppliers'
 import { getOrderById } from './API/getOrderyId'
 import { checkAffiliate } from './API/checkAffiliate'
-import consultPF from './API/Getnet/consultPF'
 
 const TIMEOUT_MS = 800
 
