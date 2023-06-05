@@ -60,7 +60,36 @@
         "host": "conversationtracker.vtex.com.br",
         "path": "/api/*"
       }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "api-homologacao.getnet.com.br",
+        "path": "*"
+      }
     }
   ],
-  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema",
+  "settingsSchema": {
+    "title": "Getnet",
+    "type": "object",
+    "properties": {
+      "clientIdT": {
+        "type": "string",
+        "title": "TRANSACIONAL Client ID"
+      },
+      "clientSecretT": {
+        "type": "string",
+        "title": "TRANSACIONAL Client secret"
+      },
+      "clientIdB": {
+        "type": "string",
+        "title": "BACKOFFICE Client ID"
+      },
+      "clientSecretB": {
+        "type": "string",
+        "title": "BACKOFFICE Client secret"
+      }
+    }
+  }
 }
