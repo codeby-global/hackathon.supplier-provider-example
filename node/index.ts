@@ -4,6 +4,7 @@ import { LRUCache, method, Service } from '@vtex/api'
 import { Clients } from './clients'
 import { provideSuppliersUsingMiniCart } from './API/suppliers'
 import { getOrderById } from './API/getOrderyId'
+import { checkAffiliate } from './API/checkAffiliate'
 
 const TIMEOUT_MS = 800
 
@@ -39,6 +40,7 @@ declare global {
     code: number
     payload: any
     order: any
+    affiliate: any
   }
 }
 
@@ -48,7 +50,7 @@ export default new Service({
   routes: {
     // `getSuppliers` is the route that must provide a supplier for the supplierBuilder
     getSuppliersByMiniCart: method({
-      POST: [getOrderById, provideSuppliersUsingMiniCart],
+      POST: [getOrderById, checkAffiliate, provideSuppliersUsingMiniCart],
     }),
   },
 })
