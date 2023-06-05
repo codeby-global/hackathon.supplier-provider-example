@@ -1,12 +1,8 @@
-import { json } from 'co-body'
 
 import { getSuppliersByMiniCart } from '../business/suppliers'
 
-export async function provideSuppliersUsingMiniCart({
-  req,
-  response,
-}: Context) {
-  const payload = await json(req)
+export async function provideSuppliersUsingMiniCart(ctx: Context) {
+  const { response, state: { payload } } = ctx
   const suppliers = getSuppliersByMiniCart(payload)
 
   response.status = 200

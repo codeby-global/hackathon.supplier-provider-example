@@ -3,6 +3,7 @@ import { LRUCache, method, Service } from '@vtex/api'
 
 import { Clients } from './clients'
 import { provideSuppliersUsingMiniCart } from './API/suppliers'
+import { getOrderById } from './API/getOrderyId'
 
 const TIMEOUT_MS = 800
 
@@ -36,6 +37,8 @@ declare global {
   // The shape of our State object found in `ctx.state`. This is used as state bag to communicate between middlewares.
   interface State extends RecorderState {
     code: number
+    payload: any
+    order: any
   }
 }
 
@@ -45,7 +48,7 @@ export default new Service({
   routes: {
     // `getSuppliers` is the route that must provide a supplier for the supplierBuilder
     getSuppliersByMiniCart: method({
-      POST: [provideSuppliersUsingMiniCart],
+      POST: [getOrderById, provideSuppliersUsingMiniCart],
     }),
   },
 })
