@@ -17,3 +17,13 @@ react/.eslintrc
 react/tests-setup.js
 react/__mocks__
 react/__tests__
+node/__tests__/
+node/node_modules
+node_modules
+
+# tests
+**/__tests__
+**/node_modules/**
+**/__mocks__
+**/*.test.*
+react/testUtils/**
