@@ -53,8 +53,5 @@ export default new Service({
     getSuppliersByMiniCart: method({
       POST: [getOrderById, checkAffiliate, provideSuppliersUsingMiniCart],
     }),
-    consultPF: method({
-      GET: [consultPF]
-    }),
   },
 })

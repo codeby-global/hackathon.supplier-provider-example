@@ -9,10 +9,6 @@
     "status": {
       "path": "/_v/status/:code",
       "public": true
-    },
-    "consultPF": {
-      "path": "/_v/consultPF/:merchant_id/:cpf",
-      "public": true
     }
   }
 }
