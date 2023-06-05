@@ -5,6 +5,7 @@ import { Clients } from './clients'
 import { provideSuppliersUsingMiniCart } from './API/suppliers'
 import { getOrderById } from './API/getOrderyId'
 import { checkAffiliate } from './API/checkAffiliate'
+import consultPF from './API/Getnet/consultPF'
 
 const TIMEOUT_MS = 800
 
@@ -51,6 +52,9 @@ export default new Service({
     // `getSuppliers` is the route that must provide a supplier for the supplierBuilder
     getSuppliersByMiniCart: method({
       POST: [getOrderById, checkAffiliate, provideSuppliersUsingMiniCart],
+    }),
+    consultPF: method({
+      GET: [consultPF]
     }),
   },
 })
