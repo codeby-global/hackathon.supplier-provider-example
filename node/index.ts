@@ -6,7 +6,7 @@ import { provideSuppliersUsingMiniCart } from './API/suppliers'
 import { getOrderById } from './API/getOrderyId'
 import { checkAffiliate } from './API/checkAffiliate'
 
-const TIMEOUT_MS = 800
+const TIMEOUT_MS = 8000
 
 // Create a LRU memory cache for the Status client.
 // The @vtex/api HttpClient respects Cache-Control headers and uses the provided cache.
