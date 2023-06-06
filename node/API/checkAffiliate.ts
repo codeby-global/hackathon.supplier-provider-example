@@ -20,7 +20,7 @@ export async function checkAffiliate(ctx: Context, next: () => void) {
   console.log("affiliateId: ", affiliateId)
 
   const affiliate = await masterdata.getDocument({
-    dataEntity: 'vtex_vtexday2023_hackathon_affiliates_affiliates',
+    dataEntity: 'vtexdayhackathon7_vtexday2023_hackathon_affiliates_affiliates',
     fields: ['_all'],
     id: affiliateId
   })

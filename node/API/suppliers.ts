@@ -2,6 +2,8 @@
 export async function provideSuppliersUsingMiniCart(ctx: Context) {
   const { response, state: { payload, affiliate } } = ctx
 
+  console.log("provideSuppliersUsingMiniCart", affiliate)
+
   const amount = (payload.operationValue * affiliate.commissionPercentage) / 100
 
   const body = {
