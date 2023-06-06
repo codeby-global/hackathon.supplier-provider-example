@@ -6,7 +6,7 @@ export async function getOrderById(ctx: Context, next: () => void) {
 
   const payload = await json(req)
 
-  const order = await oms.order(payload.orderId)
+  const order = await oms.order(`${payload.orderId}-01`)
 
   ctx.state.payload = payload
   ctx.state.order = order

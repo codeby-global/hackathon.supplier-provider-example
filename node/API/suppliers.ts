@@ -2,14 +2,16 @@
 export async function provideSuppliersUsingMiniCart(ctx: Context) {
   const { response, state: { payload, affiliate } } = ctx
 
+  const commissionAmount = (payload.operationValue * affiliate.commissionPercentage) / 100
+
   const body = {
-    id: affiliate.id,
+    id: affiliate.refId,
     name: affiliate.name,
-    amount: payload.operationValue ?? 100,
+    amount: payload.operationValue,
     document: affiliate.document,
     documentType: affiliate.documentType,
     role: 'influencer',
-    commissionAmount: 100,
+    commissionAmount: commissionAmount,
     chargebackLiable: false,
     chargeProcesssingFee: false,
   }
